@@ -147,7 +147,19 @@ Complexity is O(n · k log k), which is fine for form input. For very long texts
 - Client-side validation mirrors the server rules; the server still validates independently.
 - The layout is a responsive CSS grid: two columns on desktop, one on mobile.
 
-### What I'd add with more time
-- EF Core migrations instead of `EnsureCreated()`.
-- An integration test using `WebApplicationFactory<Program>` with SQLite in-memory.
-- Response caching for repeated anagram lookups, since the dictionary is read-only.
+### Results:
+
+<img width="2356" height="1630" alt="image" src="https://github.com/user-attachments/assets/1da6affa-898b-4fd0-8578-c275c8e6deba" />
+
+<img width="3084" height="1720" alt="image" src="https://github.com/user-attachments/assets/14ef7e5d-5cc2-4b91-9688-0f3a6fecf37d" />
+<img width="2394" height="2002" alt="image" src="https://github.com/user-attachments/assets/338c2545-796c-4221-9321-e481432daf3b" />
+
+<img width="2266" height="1578" alt="image" src="https://github.com/user-attachments/assets/e456e345-11d8-4796-8cbd-55f6d58064b9" />
+
+<img width="1552" height="1794" alt="image" src="https://github.com/user-attachments/assets/acbf954b-e890-4440-8694-f3e045d97fe1" />
+
+
+
+
+
+
