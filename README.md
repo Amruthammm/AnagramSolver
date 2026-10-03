@@ -23,7 +23,7 @@ They only talk to each other over HTTP (`/api/...`).
 ### Prerequisites
 - .NET 8 SDK
 - Node 18.19+ / 20+ and npm
-- SQL Server LocalDB (installed with Visual Studio). There is an alternative without SQL Server [below](#running-without-sql-server).
+- SQL Server lite.
 
 ### 1. API
 
