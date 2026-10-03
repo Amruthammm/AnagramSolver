@@ -1,0 +1,17 @@
+<main class="page">
+  <header class="page__header">
+    <h1>Anagram Finder</h1>
+    <p>Search an ~80,000-word  English dictionary for anagrams, or count anagrams hidden inside a string.</p>
+  </header>
+
+  <nav class="tabs" aria-label="Features">
+    <a class="tabs__link" routerLink="/matching-anagrams" routerLinkActive="tabs__link--active" ariaCurrentWhenActive="page">
+      <span class="tabs__step">1</span> Matching anagrams
+    </a>
+    <a class="tabs__link" routerLink="/find-anagrams" routerLinkActive="tabs__link--active" ariaCurrentWhenActive="page">
+      <span class="tabs__step">2</span> Find the anagrams
+    </a>
+  </nav>
+
+  <router-outlet />
+</main>

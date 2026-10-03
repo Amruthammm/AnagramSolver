@@ -1,0 +1,62 @@
+<section class="card" aria-labelledby="matching-title">
+  <header class="card__header">
+    <span class="card__step">1</span>
+    <div>
+      <h2 id="matching-title">Matching anagrams</h2>
+      <p class="card__hint">Every dictionary word that uses <strong>all</strong> of the same letters.</p>
+    </div>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div class="field">
+      <label for="matching-word">Word</label>
+      <input
+        id="matching-word"
+        type="text"
+        formControlName="word"
+        placeholder="e.g. dogs"
+        autocomplete="off"
+        spellcheck="false"
+        [attr.aria-invalid]="word.invalid && word.touched"
+        aria-describedby="matching-word-error"
+      />
+      @if (word.invalid && word.touched) {
+        <p id="matching-word-error" class="field__error" role="alert">
+          @if (word.hasError('required')) { Please enter a word. }
+          @else if (word.hasError('maxlength')) { That word is too long. }
+          @else if (word.hasError('pattern')) { Use letters only (apostrophes are fine). }
+        </p>
+      }
+    </div>
+
+    <button type="submit" class="button">Find anagrams</button>
+  </form>
+
+  @if (result$ | async; as state) {
+    <div class="result" aria-live="polite">
+      @switch (state.status) {
+        @case ('loading') {
+          <p class="result__muted">Searching…</p>
+        }
+        @case ('error') {
+          <p class="result__error" role="alert">{{ state.message }}</p>
+        }
+        @case ('success') {
+          <p class="result__summary">
+            <span class="result__count">{{ state.data.count }}</span>
+            {{ state.data.count === 1 ? 'anagram' : 'anagrams' }} of <strong>“{{ state.data.input }}”</strong>
+          </p>
+          @if (state.data.count > 0) {
+            <ul class="chips" data-testid="anagram-list">
+              @for (anagram of state.data.anagrams; track anagram) {
+                <li class="chip">{{ anagram }}</li>
+              }
+            </ul>
+          } @else {
+            <p class="result__muted">No dictionary words use exactly these letters.</p>
+          }
+        }
+      }
+    </div>
+  }
+</section>

@@ -1,0 +1,83 @@
+<section class="card" aria-labelledby="occurrences-title">
+  <header class="card__header">
+    <span class="card__step">2</span>
+    <div>
+      <h2 id="occurrences-title">Find the anagrams</h2>
+      <p class="card__hint">How many times a word, or any anagram of it, appears in a text.</p>
+    </div>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div class="field">
+      <label for="occurrences-text">Text to search</label>
+      <textarea
+        id="occurrences-text"
+        formControlName="text"
+        rows="3"
+        placeholder="e.g. thegodsanddogsweredogged"
+        spellcheck="false"
+        [attr.aria-invalid]="text.invalid && text.touched"
+      ></textarea>
+      @if (text.invalid && text.touched) {
+        <p class="field__error" role="alert">
+          @if (text.hasError('required')) { Please enter some text. } @else { That text is too long. }
+        </p>
+      }
+    </div>
+
+    <div class="field">
+      <label for="occurrences-word">Word</label>
+      <input
+        id="occurrences-word"
+        type="text"
+        formControlName="word"
+        placeholder="e.g. dog"
+        autocomplete="off"
+        spellcheck="false"
+        [attr.aria-invalid]="word.invalid && word.touched"
+      />
+      @if (word.invalid && word.touched) {
+        <p class="field__error" role="alert">
+          @if (word.hasError('required')) { Please enter a word. }
+          @else if (word.hasError('maxlength')) { That word is too long. }
+          @else if (word.hasError('pattern')) { Use letters only (apostrophes are fine). }
+        </p>
+      }
+    </div>
+
+    <button type="submit" class="button">Count anagrams</button>
+  </form>
+
+  @if (result$ | async; as state) {
+    <div class="result" aria-live="polite">
+      @switch (state.status) {
+        @case ('loading') {
+          <p class="result__muted">Counting…</p>
+        }
+        @case ('error') {
+          <p class="result__error" role="alert">{{ state.message }}</p>
+        }
+        @case ('success') {
+          <p class="result__summary">
+            <span class="result__count" data-testid="occurrence-count">{{ state.data.count }}</span>
+            {{ state.data.count === 1 ? 'occurrence' : 'occurrences' }} of <strong>“{{ state.data.word }}”</strong> or its anagrams
+          </p>
+
+          @if (state.data.count > 0) {
+            <p class="highlighted-text" aria-label="Text with matches highlighted">
+              @for (segment of state.data.segments; track $index) {
+                @if (segment.match) { <mark>{{ segment.text }}</mark> } @else { <span>{{ segment.text }}</span> }
+              }
+            </p>
+
+            <ol class="chips chips--numbered">
+              @for (occurrence of state.data.occurrences; track occurrence.index) {
+                <li class="chip">{{ occurrence.value }} <small>at {{ occurrence.index }}</small></li>
+              }
+            </ol>
+          }
+        }
+      }
+    </div>
+  }
+</section>

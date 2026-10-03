@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08476BB4-5B04-4659-B81B-981025725786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram.Api", "src\Anagram.Api\Anagram.Api.csproj", "{DFB395C0-DF0D-4B8D-9D17-C5ACE31BDB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram.Application", "src\Anagram.Application\Anagram.Application.csproj", "{56EC1331-03A9-44B5-91AE-ADD32D107E3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram.Domain", "src\Anagram.Domain\Anagram.Domain.csproj", "{1648903B-7EA9-4BE5-A41D-CFD6967EEB08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram.Infrastructure", "src\Anagram.Infrastructure\Anagram.Infrastructure.csproj", "{4C88B21E-5560-4F33-BA57-612DC29645C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8C8CFAA8-8ED3-453B-BE81-68CB16FAD5F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram.Application.Tests", "tests\Anagram.Application.Tests\Anagram.Application.Tests.csproj", "{01151D8F-137A-4A27-ACE5-1760B7036A24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFB395C0-DF0D-4B8D-9D17-C5ACE31BDB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB395C0-DF0D-4B8D-9D17-C5ACE31BDB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB395C0-DF0D-4B8D-9D17-C5ACE31BDB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB395C0-DF0D-4B8D-9D17-C5ACE31BDB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56EC1331-03A9-44B5-91AE-ADD32D107E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56EC1331-03A9-44B5-91AE-ADD32D107E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56EC1331-03A9-44B5-91AE-ADD32D107E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56EC1331-03A9-44B5-91AE-ADD32D107E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1648903B-7EA9-4BE5-A41D-CFD6967EEB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1648903B-7EA9-4BE5-A41D-CFD6967EEB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1648903B-7EA9-4BE5-A41D-CFD6967EEB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1648903B-7EA9-4BE5-A41D-CFD6967EEB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C88B21E-5560-4F33-BA57-612DC29645C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C88B21E-5560-4F33-BA57-612DC29645C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C88B21E-5560-4F33-BA57-612DC29645C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C88B21E-5560-4F33-BA57-612DC29645C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01151D8F-137A-4A27-ACE5-1760B7036A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01151D8F-137A-4A27-ACE5-1760B7036A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01151D8F-137A-4A27-ACE5-1760B7036A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01151D8F-137A-4A27-ACE5-1760B7036A24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFB395C0-DF0D-4B8D-9D17-C5ACE31BDB9A} = {08476BB4-5B04-4659-B81B-981025725786}
+		{56EC1331-03A9-44B5-91AE-ADD32D107E3C} = {08476BB4-5B04-4659-B81B-981025725786}
+		{1648903B-7EA9-4BE5-A41D-CFD6967EEB08} = {08476BB4-5B04-4659-B81B-981025725786}
+		{4C88B21E-5560-4F33-BA57-612DC29645C5} = {08476BB4-5B04-4659-B81B-981025725786}
+		{01151D8F-137A-4A27-ACE5-1760B7036A24} = {8C8CFAA8-8ED3-453B-BE81-68CB16FAD5F0}
+	EndGlobalSection
+EndGlobal

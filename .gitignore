@@ -1,0 +1,11 @@
+# .NET
+bin/
+obj/
+*.db
+.vs/
+*.user
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
